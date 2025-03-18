@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <script defer src="https://apps.4sitestudios.com/wordle-for-good/wordle-for-good.js"></script>
+    <script src="./wordle.js"></script>
+</head>
+<body style=" margin: 0;">
+<div id="bookmarks"></div>
+<script>
+  fetch("../bookmarks.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("bookmarks").innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>
+<div id="wordle">
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@media (prefers-color-scheme: light) {
+    #bookmarks {
+        background-color: white;
+        color: #333;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    #bookmarks {
+        background-color: #333;
+        color: white;
+        div {
+             a {
+                color: white;
+             }
+        }
+    }
+}
+
+#bookmarks {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    /* background-color: #bbb;   */
+    width:100%;
+    div {
+        float: left;
+        padding: 4px 8px;
+        margin: 4px 8px;
+        border-radius: 100px;
+        img {
+            height: 15px;
+            vertical-align: sub;
+        }
+        a {
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings:
+              "wdth" 100;        
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    div:hover {
+        background-color: #FFFFFF20;
+        transition: background-color 200ms linear;
+    }
+}
