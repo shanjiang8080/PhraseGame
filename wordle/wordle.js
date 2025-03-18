@@ -1,4 +1,4 @@
-fetch('/api/wordle')
+fetch('/api/wordleAPI')
   .then(response => response.json())
   .then(data => {
     const solution = data.solution;
