@@ -6,9 +6,10 @@
     <title>Wordle</title>
     <script defer src="https://apps.4sitestudios.com/wordle-for-good/wordle-for-good.js"></script>
     <script src="./wordle.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body style=" margin: 0;">
-<div id="bookmarks"></div>
+<body style="margin: 0;display: flex;flex-direction: column;align-items: center;">
+<div id="bookmarks" style="position: unset"></div>
 <script>
   fetch("../bookmarks.html")
     .then(response => response.text())
@@ -18,6 +19,18 @@
     .catch(error => console.error('Error loading navbar:', error));
 </script>
 <div id="wordle">
+</div>
+<div class="win popup">
+  <div class="inner">
+    <h2>You won!</h2>
+    <p id="wintext"></p>  
+  </div>
+</div>
+<div class="lose popup">
+  <div class="inner">
+    <h2>You lost!</h2>
+    <p id="losetext"></p>  
+  </div>
 </div>
 </body>
 </html>
