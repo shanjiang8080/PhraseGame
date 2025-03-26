@@ -33,7 +33,7 @@ var x = setInterval(function() {
     document.getElementById("demo1").innerHTML = "EXPIRED";
     document.getElementById("demo2").innerHTML = "";
     document.getElementById("demo3").innerHTML = "";
-    
+    document.getElementById("secret").className = "expired";
   }
 }, 1000);
 

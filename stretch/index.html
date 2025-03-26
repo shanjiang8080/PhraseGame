@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixing Magic</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+</head>
+<body>
+    <div id="bookmarks" style="position: unset"></div>
+    <script>
+      fetch("../bookmarks.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("bookmarks").innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    </script>
+    
+    <!--make it look good i guess, i dunno-->
+    <div id="circlecontainer">
+        <svg id="C" class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#FFFF41" cx="50" cy="50" r="50" />
+        </svg>
+        <svg id="M" class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#F1167D" cx="50" cy="50" r="50" />
+        </svg>
+        <svg id="Y" class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#00AEEF" cx="50" cy="50" r="50" />
+        </svg>
+        <button id="secret" key="stretch">messy</button>
+    </div>
+    <div id="articlebody">
+        <h1 class="doto">The Wonderful World of Color-Mixing</h1>
+        <svg id="Y" class="circle small c1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#00AEEF" cx="50" cy="50" r="50" />
+        </svg>
+        <p class="arvo-regular">Colors are amazing. Isn't it incredible how two colors can combine to create something totally new? Let's take a closer look at how colors mix, both on paper and on screens.</p>
+        <svg id="Y" class="circle small c2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#ffff5c" cx="50" cy="50" r="50" />
+        </svg>
+        <p class="arvo-regular">On paper, color mixing often works through subtractive color models. Imagine you’re painting with red, yellow, and blue—primary colors in the subtractive world. By blending them, you subtract wavelengths of light, creating darker shades. For example, mixing red and yellow paints makes orange, while combining all three primary colors might give you a deep brown or black. Artists love experimenting with this model to create a full rainbow of hues. In printing, a slightly different subtractive model called CMYK (Cyan, Magenta, Yellow, and Black) is used to create vivid images.</p>
+        <svg id="Y" class="circle small c3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#F1167D" cx="50" cy="50" r="50" />
+        </svg>
+        <p class="arvo-regular">On computer screens, the story shifts to additive color mixing, where colors combine by adding light. Screens use red, green, and blue (RGB) as primary colors, and by mixing these lights, you can create all the colors of the digital spectrum. For instance, adding red and green light creates yellow, while blue and green combine to make cyan. When all three lights overlap at full intensity, they produce white light. Fascinating, right?</p>
+        <p class="arvo-regular">But this isn't always true. Sometimes colors cross paths in surprising ways. Colors can be mixed in different ways on computers, and they can mix like paints! If they're programmed to. Let’s say you have three circles — red, yellow, and blue. As they meet and overlap, new colors might bloom in their intersections. And if all three come together in the right spot, you might discover the darkest and most mysterious shade of them all. It might be hard to find, but it becomes clear if you can shift your view.</p>
+        <div id="endpad"></div>
+    </div>
+</body>
+</html>

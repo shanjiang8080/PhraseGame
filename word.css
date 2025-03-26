@@ -1,0 +1,6 @@
+button#secret {
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: 'Courier New', Courier, monospace;
+}

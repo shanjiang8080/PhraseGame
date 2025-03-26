@@ -29,8 +29,8 @@ fetch(`/api/wordleAPI?date=${dateString}`)
     "></wordle-for-good>";
 
     // update win and lose
-    document.getElementById("wintext").innerHTML = `The word is: <strong>${solution}</strong>`;
-    document.getElementById("losetext").innerHTML = `The word is: <strong>${solution}</strong>`;
+    document.getElementById("wintext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
+    document.getElementById("losetext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
   })
   .catch(error => console.error('Error: ', error));
 

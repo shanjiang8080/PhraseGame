@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, #00000020 5px, transparent 1px),
+      linear-gradient(to bottom, #00000020 5px, transparent 1px);
+  }
+
+#articlebody {
+    width: min(80vh, 50em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#endpad {
+    height:120vh;
+}
+
+.doto {
+    font-family: "Doto", sans-serif;
+    font-size: 8em;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+      "ROND" 0;
+}
+
+.arvo-regular {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+}
+  
+.arvo-bold {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.arvo-regular-italic {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.arvo-bold-italic {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+  
+
+.circle {
+    position: fixed !important;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 50%;
+    transform: translateZ(0);
+    mix-blend-mode: multiply !important;
+    opacity: 1;
+    z-index: -1;
+}
+
+.circle.small {
+    width: 10vh;
+    height: 10vh;
+    position:relative !important;
+}
+.circle.small.c1 {
+    right:68vh !important;
+}
+.circle.small.c2 {
+    left:73vh !important;
+    top: -10vh !important;
+}
+
+.circle.small.c3 {
+    right:77vh !important;
+    bottom: -10vh !important;
+}
+
+.circle.small.c4 {
+    left:77vh !important;
+    bottom: -10vh !important;
+}
+
+
+
+#circlecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-blend-mode: multiply, multiply, multiply;
+}
+
+#C {
+top: 0;
+}
+
+#M {
+top: 0;
+left: -50vh;
+}
+
+#Y {
+top: 0;
+right: -50vh;
+}
+
+#secret {
+    position:fixed;
+    margin-top: 45vh;
+    font-family: "Doto", sans-serif;
+    font-size:1em;
+    font-weight: 900;
+    display: none;
+    color:aliceblue;
+}
+
+@media only screen and (max-width: 95vh) {
+    #secret {
+        display: block !important;
+    }
+}

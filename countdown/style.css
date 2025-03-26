@@ -17,26 +17,31 @@
 
 .dark {
     --grad: linear-gradient(rgb(27, 27, 27), #202);
-    --card: #0d1217;
-    --icard: aliceblue;
-    --fontc: #FFF;
-    --header: #111;
 }
 .light {
     --grad: linear-gradient(#FFF, rgb(230, 247, 248));
-    --card: aliceblue;
-    --icard: #0d1217;
-    --fontc: #140008;
-    --header: #EEE;
 }
 
+:root {
+    color-scheme: light dark;
+    --lightcard: aliceblue;
+    --lighticard: #0d1217;
+    --lightfontc: #140008;
+    --lightheader: #EEE;
+
+    --darkcard: #0d1217;
+    --darkicard: aliceblue;
+    --darkfontc: #FFF;
+    --darkheader: #111;
+
+}
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: all ease-in-out 0.3s;
     background-image: var(--grad);
-
+    margin: 0px;
 }
 
 .overlay {
@@ -44,7 +49,6 @@ body {
     width: 100vw;
     height: 100vh;
     background-size: 50px 50px;
-    background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
     opacity: 0.2;
     z-index: -10;
 }
@@ -81,12 +85,58 @@ button {
 }
 
 h1 {
-    color: var(--fontc);
+    color: light-dark(var(--lightfontc), var(--darkfontc));
     position:relative;
     font-size: 5em;
 }
+.light > #card > h1 {
+    color-scheme: light;
+} 
+
+.dark > #card > h1 {
+    color-scheme: dark;
+} 
+
+.light > #abovecard > h3 {
+    color-scheme: light;
+}
+
+.dark > #abovecard > h3 {
+    color-scheme: dark;
+}
+
+.light > div > #thing > .gg-sun {
+    color: #000;
+}
+.dark > div > #thing > .gg-sun {
+    color: #FFF;
+}
+
+.light > .overlay {
+    background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+.dark > .overlay {
+    background-image: radial-gradient(circle, #FFF 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+#thingwrap {
+    position: absolute;
+    top: 3em;
+    right: 1em;
+}
+
 
 h3 {
     font-family: Santello;
-    color: var(--fontc);
+    color: light-dark(var(--lightfontc), var(--darkfontc));
+    position:relative;
+    top: 15em;
+}
+
+#secret {
+    display: none;
+}
+#secret.expired {
+    display: block;
 }
