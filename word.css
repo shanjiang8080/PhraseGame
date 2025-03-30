@@ -3,4 +3,11 @@ button#secret {
     border: none;
     background: none;
     font-family: 'Courier New', Courier, monospace;
+    mix-blend-mode: difference;
+    color: white;
+    font-weight: 900;
+}
+button#secret:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

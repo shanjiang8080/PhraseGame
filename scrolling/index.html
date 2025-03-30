@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodging, not Shooting</title>
+    <link rel="stylesheet" href="/scrolling/style.css">
+</head>
+<body style="margin: 0;display: flex;flex-direction: column;align-items: center;">
+    <div id="bookmarks"></div>
+    <script>
+      fetch("../bookmarks.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("bookmarks").innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    </script>
+    
+    <div id="pagecontent">
+    <!--present this like a blog post-->
+    <article>
+        <h1>Bullet Hell Games are About Dodging, not Shooting</h1>
+        <p>Most beginners to bullet hell see the genre as just really hard shoot-em-ups.
+            And while that is literally true, to state this is to ignore the gameplay differences that exist between
+            bullet hells and conventional 2D space shooters.
+        </p>
+        <img src="/scrolling/image1.png"/>
+        <p>I've been playing Enter the Gungeon recently, and it's not just an action packed roguelike dungeon-crawler. Because everything's a gun. But speaking more seriously, this conversation is about how, just by tweaking something like projectile count, a game can feel drastically different.</p>
+        <p>I suppose that's not too surprising. If you changed the health of the main character to 1 in every game, it'd definitely feel different in most cases. Probably worse!</p>
+        <p>Okay, this is getting derailed. In Enter the Gungeon, every enemy fires bullets that you must avoid. To do this, you are given two options. The first is a dodge roll, which provides you with invincibility frames for the first half of the roll, and it looks cool while you do it. The second option is... stepping out of the way.</p>
+        <p>It's not that realistic, I don't think most bullets are that slow in real life, but it's just how it is. But what I'm getting at is that, while you might be tempted to dodge roll at every opportunity, it's actually not a great idea to do that.</p>
+        <p>It's not that it'll kill you (well, it might, if you're bad. It can actually be hard to control sometimes). The actual problem with dodge rolling in Enter the Gungeon is that you can't shoot and roll at the same time. You can reload, which is nice, but you can't deal damage. </p>
+        <p>And because of this, skilled players (which I aspire to become), minimize their dodging and instead focus on weaving between bullets, all the while continuing to shoot the enemy. This is actually quite common in bullet-hell games. One particular way this manifests is stepping small amounts at a time, so that they aim where you are, and you can dodge while stepping a small amount, which is helpful given the limited screen (or room, in this case) space. Apparently, it's called "micro-dodging."</p>
+        <img src="/scrolling/image2.jpg"/>
+        <p>Well, enough about me talking. How about you try for a moment? I suppose this won't be the hardest, but if you fail... don't give up! Stay motivated! There's a reason to do this! You have an ulterior motive!</p>
+        <p>You can do it! I believe in you!</p>
+    </article>
+</div>
+<div id="overlay">
+<!-- make the button on the left side of the screen-->
+    <button id="secret" key="scrolling">satellites</button>
+    <div id="scrollcon">
+        <div id="scrollbar"></div>
+        <img id="spaceship" src="/scrolling/ship.png"/>
+    </div>
+    <canvas id="playOverlay"></canvas>
+</div>
+<script src="/scrolling/scrolling.js"></script>
+</body>
+<script src="/word.js"></script>
+<link rel="stylesheet" href="/word.css">
+</html>

@@ -20,34 +20,54 @@
 
 #bookmarks {
     position: absolute;
+    display: flex;
     top: 0;
     overflow: hidden;
     /* background-color: #bbb;   */
     width:100%;
-    div {
-        float: left;
-        padding: 4px 8px;
-        margin: 4px 8px;
-        border-radius: 100px;
-        img {
-            height: 15px;
-            vertical-align: sub;
-        }
-        a {
-            font-family: "Roboto", sans-serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            font-variation-settings: "wdth" 100;
-            font-size: 14px;
-            line-height: 1.42857143;  
-            text-decoration: none;   
-        }
-        a:hover {
-            text-decoration: none;
-        }
-    }
-    div:hover {
+    .bholder:hover {
         background-color: #FFFFFF20;
         transition: background-color 200ms linear;
     }
+}
+.bholder {
+    float: left;
+    padding: 4px 8px;
+    margin: 4px 8px;
+    border-radius: 100px;
+    img {
+        height: 15px;
+        vertical-align: sub;
+    }
+    a {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 14px;
+        line-height: 1.42857143;  
+        text-decoration: none;   
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.bwhat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bsolution {
+    position: absolute;
+    top: 3em;
+    font-size: 0.75em;
+    font-family: "Roboto";
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+}
+.bwhat:hover > .bsolution {
+    filter: alpha(opacity=50);
+    opacity: 1;
 }

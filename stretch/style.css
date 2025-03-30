@@ -121,7 +121,6 @@ right: -50vh;
     font-size:1em;
     font-weight: 900;
     display: none;
-    color:aliceblue;
 }
 
 @media only screen and (max-width: 95vh) {

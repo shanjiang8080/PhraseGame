@@ -1,0 +1,108 @@
+/* General Page Styling */
+body {
+    font-family: "Georgia", serif; /* Classic, readable font for blogs */
+    background-color: #232323; /* Soft gray background for readability */
+    color: #333; /* Dark gray text color for less harsh contrast */
+    margin: 0; /* No default margins */
+    padding: 0;
+}
+
+/* Center Content Area */
+#pagecontent {
+    max-width: 800px; /* Restrict width for readability */
+    margin: 20px auto; /* Center content with top/bottom spacing */
+    padding: 20px;
+    background: #111; /* White background for the content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for subtle elevation */
+    border-radius: 8px; /* Rounded corners for a modern feel */
+}
+
+/* Blog Article Styling */
+article h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #dfeaf5; /* Stronger contrast for heading */
+}
+
+article p {
+    color: #ebebeb; /* Stronger contrast for heading */
+    line-height: 1.6; /* Improve readability with line spacing */
+    margin-bottom: 1.2em; /* Space out paragraphs */
+    text-align: justify; /* Align text for a clean blog look */
+}
+
+/* Overlay and Canvas Styling */
+#overlay {
+    width: 100%;
+    height: 100%;
+    /*pointer-events: none; /* Prevent interaction */
+}
+
+#playOverlay {
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    /*height: 100%;*/
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    pointer-events: none; /* Ensure it doesn't block clicks */
+}
+
+/* The progress container (grey background) */
+#scrollcon {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 2em;
+    background: #191827;
+}
+
+/* The progress bar (scroll indicator) */
+#scrollbar {
+height: 1em;
+background: #22302b;
+width: 0%;
+}
+
+#spaceship {
+    image-rendering: pixelated;
+    width: 2em;
+    position:relative;
+    left: -1em;
+    top: -1.5em;
+}
+#hovered {
+    position:fixed;
+    top:0;
+    left: 0;
+
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#secret {
+    display: none;
+    position: fixed;
+    top:50vh;
+    left: 1em;
+}
+#secret.done {
+    display: unset;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+
+article > img {
+    width: 100%;
+}

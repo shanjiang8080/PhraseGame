@@ -1,13 +1,62 @@
 const secret = document.getElementById("secret");
-if (secret != null) {
-    secret.onclick = function() {
-        setCookie(secret.getAttribute("key"), secret.innerHTML, 1000);
-    };    
+
+const setCookie = (name, value, days = 7, path = '/') => {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString()
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path
+}
+const setCookieForMidnight = (name, value, path = '/') => {
+    const now = new Date();
+    const midnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1, // Get next day's midnight
+        0, 0, 0, 0 // Hours, minutes, seconds, milliseconds set to 0
+    );
+    const millisecondsToMidnight = midnight - now;
+
+    const expires = new Date(Date.now() + millisecondsToMidnight).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path;
+};
+  
+const getCookie = (name) => {
+    return document.cookie.split('; ').reduce((r, v) => {
+      const parts = v.split('=')
+      return parts[0] === name ? decodeURIComponent(parts[1]) : r
+    }, '')
+}
+  
+const deleteCookie = (name, path) => {
+    setCookie(name, '', -1, path)
 }
 
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function MakeGreen() {
+    secret.style.color = "green";
+    secret.style.mixBlendMode = "normal";
+    console.log("green now");
 }
+
+if (secret != null) {
+    // on click, make it green.
+    const key = secret.getAttribute("key");
+    // if the cookie has been set, then turn it green
+    if (getCookie(key) != '') {
+        MakeGreen();
+    }
+    // if you are on wordle
+    if (document.URL.indexOf('wordle') != -1) {
+        secret.onclick = function() {
+            console.log("setting a Wordle cookie");
+            setCookieForMidnight(key, secret.innerHTML);
+            MakeGreen();
+        };        
+    } else {
+        secret.onclick = function() {
+            console.log("setting a cookie");
+            setCookie(key, secret.innerHTML);
+            MakeGreen();
+        };        
+    }
+} else {
+    console.log("secret is null");
+}
+
