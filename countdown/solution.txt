@@ -1,0 +1,1 @@
+Pressing the sun/moon button changes the screen from light to dark and advances time forward 12 hours. Press it until the countdown expires.

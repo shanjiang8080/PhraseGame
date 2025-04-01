@@ -1,0 +1,1 @@
+Solving the wordle (or failing) gives you the word.

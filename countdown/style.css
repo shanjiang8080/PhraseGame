@@ -42,6 +42,7 @@ body {
     transition: all ease-in-out 0.3s;
     background-image: var(--grad);
     margin: 0px;
+    height: 100vh;
 }
 
 .overlay {
@@ -133,10 +134,28 @@ h3 {
     position:relative;
     top: 15em;
 }
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 #secret {
     display: none;
+    opacity: 0;
 }
 #secret.expired {
     display: block;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
+}
+.qanswer {
+    backdrop-filter: invert(1);
+    color: #888;
 }

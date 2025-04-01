@@ -1,0 +1,1 @@
+It's like an arcade game, but controlled with the scroll wheel.

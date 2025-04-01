@@ -1,0 +1,1 @@
+There is a line seperating the inner and outer web page, black if the inner is loaded and white otherwise.

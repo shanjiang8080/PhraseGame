@@ -1,0 +1,1 @@
+Are the red and blue circles overlapping with the yellow circle? They may or may not be, depending on the browser's current aspect ratio.

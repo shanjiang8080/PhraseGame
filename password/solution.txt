@@ -1,0 +1,1 @@
+Input all of the words found thus far in the order they appear in the bookmarks bar.

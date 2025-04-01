@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-image: url("mirror.png");
+    overflow-x: hidden;
+}
+
+img {
+    position:absolute;
+}
+
+.welcome {
+    left: 25vw;
+}
+.computer {
+    right: 1em;
+}
+.clown {
+    right: 7em;
+}
+.tv {
+    right: 5em;
+}
+
+.teach {
+    position:relative;
+    left: 5em;
+}
+.construction {
+    
+}
+.knight {
+    right: 10.5em;
+}
+#excerpt {
+    background-color: #FFFFFFA0;
+    padding: 1em;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    width: 100vw;
+    height: 90vh;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid white;
+}
+iframe[src] {
+    border-bottom: 3px solid black;
+}
+#nopeframe {
+    background-color: #FFFFFFA0;
+    padding: 1em;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}

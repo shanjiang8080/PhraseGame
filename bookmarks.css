@@ -38,6 +38,7 @@
     img {
         height: 15px;
         vertical-align: sub;
+        position: unset;
     }
     a {
         font-family: "Roboto", sans-serif;
