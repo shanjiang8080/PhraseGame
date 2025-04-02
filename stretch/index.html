@@ -13,15 +13,19 @@
         </style>
 </head>
 <body>
-    <div id="bookmarks" style="position: unset"></div>
-    <script>
-      fetch("../bookmarks.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("bookmarks").innerHTML = data;
-        })
-        .catch(error => console.error('Error loading navbar:', error));
-    </script>
+    <div id="bookmarks" style="position: unset">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+        <link rel="stylesheet" href="../bookmarks.css">
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/password.png"> <a class="bmark" key="password" href="../password">Log in</a></div></div>
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/wordle.png"> <a class="bmark" key="wordle" href="../wordle">Wordle</a></div></div>
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/countdown.png"> <a class="bmark" key="countdown" href="../countdown">Countdown to our reveal</a></div></div>
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/stretch.png"> <a class="bmark" key="stretch" href="../stretch">Color-Mixing Magic</a></div></div>
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/scrolling.png"> <a class="bmark" key="scrolling" href="../scrolling">Dodging, not Shooting</a></div></div>
+        <div class="bwhat"><div class="bholder"><img src="/images/icons/nesting.png"> <a class="bmark" key="nesting" href="../nesting">Welcome to My Webpage</a></div></div>
+        <script src="/bookmarkcookies.js"></script>        
+    </div>
     
     <!--make it look good i guess, i dunno-->
     <div id="circlecontainer">
