@@ -29,21 +29,22 @@
 </script>
 <div class="screen-1">
     <img src="../images/logo.png">
+    <div id="errorspot"></div>
     <div class="password">
       <label for="password">Passphrase       <span id="help-icon" onclick="toggleHelp()">?</span>
       </label>
       <div class="sec-2">
         <ion-icon name="lock-closed-outline"></ion-icon>
-        <input class="pas" type="text" name="password" placeholder="· · · · · ·"/>
+        <input id="passp" class="pas" type="text" name="password" placeholder="· · · · · ·"/>
       </div>
     </div>
     <div id="help-box" class="hidden">
         A passphrase is a sequence of words used to access a system. It is typically longer and more secure than a password.
     </div>
-    <button class="login">Login </button>
+    <button class="login" id="loginb">Login </button>
   </div>
   <script src="/hints.js"></script>
-
+  <script src="/password/validate.js"></script>
   </body>
   <!-- modified from Sowjanya (https://codepen.io/sowg/pen/dyzRPrO) -->
 </html>

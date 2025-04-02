@@ -1,0 +1,16 @@
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro:900";
+
+body {
+  font-family: sans-serif;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.nova-mono-regular {
+  font-family: "Nova Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}

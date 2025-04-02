@@ -133,3 +133,16 @@ button {
 .hidden {
   display: none;
 }
+
+#errorspot {
+  background-color: #FF000020;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+  display: none;
+  border-left: 5px solid #e04f4f;
+  padding-left: 0.1em;
+}
+
+#passp {
+  width: 100%;
+}
