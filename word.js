@@ -1,4 +1,4 @@
-const secret = document.getElementById("secret");
+let secret = document.getElementById("secret");
 
 const setCookie = (name, value, days = 7, path = '/') => {
     const expires = new Date(Date.now() + days * 864e5).toUTCString()
@@ -30,6 +30,9 @@ const deleteCookie = (name, path) => {
 }
 
 function MakeGreen() {
+    if (secret == null) {
+        secret = document.getElementById("secret");
+    }
     secret.style.color = "green";
     secret.style.mixBlendMode = "normal";
     console.log("green now");
@@ -60,3 +63,19 @@ if (secret != null) {
     console.log("secret is null");
 }
 
+function forceLoadWordah() {
+    console.log("forceloadwordah is running");
+    // get secret
+    secret = document.getElementById("secret");
+    const key = secret.getAttribute("key");
+    // if the cookie has been set, then turn it green
+    if (getCookie(key) != '') {
+        MakeGreen();
+    }
+    // you are on wordle
+    secret.addEventListener("click", function() {
+        console.log("setting a Wordle cookie");
+        setCookieForMidnight(key, secret.innerHTML);
+        MakeGreen();
+    });        
+}

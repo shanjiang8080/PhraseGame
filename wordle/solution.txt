@@ -1,1 +1,1 @@
-Solving the wordle (or failing) gives you the word.
+Solving the wordle gives you the word. It's the same as the New York Times' wordle.

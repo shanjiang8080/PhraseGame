@@ -35,7 +35,7 @@ qanswer.classList.add("qanswer");
 fetch(getLocal(oldUrl, "hint1.txt"))
 .then(response => response.text())
 .then((data) => {
-console.log(data);
+//console.log(data);
 qanswer.innerHTML = data;
 });
 
@@ -49,7 +49,7 @@ qqanswer.classList.add("qanswer");
 fetch(getLocal(oldUrl, "hint2.txt"))
 .then(response => response.text())
 .then((data) => {
-console.log(data);
+//console.log(data);
 qqanswer.innerHTML = data;
 });
 
@@ -63,7 +63,7 @@ qqqanswer.classList.add("qanswer");
 fetch(getLocal(oldUrl, "solution.txt"))
 .then(response => response.text())
 .then((data) => {
-console.log(data);
+//console.log(data);
 qqqanswer.innerHTML = data;
 });
 
@@ -116,4 +116,4 @@ qqholder.appendChild(qholder3);
 
 
 document.body.appendChild(qqholder);
-console.log("uh, it was loaded");
+//console.log("uh, it was loaded");
