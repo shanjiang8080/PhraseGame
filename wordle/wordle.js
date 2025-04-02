@@ -31,6 +31,31 @@ fetch(`/api/wordleAPI?date=${dateString}`)
     // update win and lose
     document.getElementById("wintext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
     document.getElementById("losetext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
+    if (secret != null) {
+      // on click, make it green.
+      const key = secret.getAttribute("key");
+      // if the cookie has been set, then turn it green
+      if (getCookie(key) != '') {
+          MakeGreen();
+      }
+      // if you are on wordle
+      if (document.URL.indexOf('wordle') != -1) {
+          secret.onclick = function() {
+              console.log("setting a Wordle cookie");
+              setCookieForMidnight(key, secret.innerHTML);
+              MakeGreen();
+          };        
+      } else {
+          secret.onclick = function() {
+              console.log("setting a cookie");
+              setCookie(key, secret.innerHTML);
+              MakeGreen();
+          };        
+      }
+  } else {
+      console.log("secret is null");
+  }
+  
   })
   .catch(error => console.error('Error: ', error));
 
