@@ -31,6 +31,7 @@ fetch(`/api/wordleAPI?date=${dateString}`)
     // update win and lose
     document.getElementById("wintext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
     document.getElementById("losetext").innerHTML = `The word is: <button id="secret" key="wordle">${solution}</button>`;
+    const secret = document.getElementById("secret");
     if (secret != null) {
       // on click, make it green.
       const key = secret.getAttribute("key");
