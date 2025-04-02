@@ -43,11 +43,11 @@ function decrement() {
     but = document.getElementById("thing");
     if (but.className == "l") {
         but.className = "d";
-        but.innerHTML = "<img src=\"moon.svg\" style=\"filter: invert(1);\">"
+        but.innerHTML = "<img src=\"/countdown/moon.svg\" style=\"filter: invert(1);\">"
         swap("l");
     } else {
         but.className = "l";
-        but.innerHTML = "<img src=\"sun.svg\">"
+        but.innerHTML = "<img src=\"/countdown/sun.svg\">"
         swap("d");
     }
 }

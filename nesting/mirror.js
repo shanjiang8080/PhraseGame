@@ -5,5 +5,5 @@ diff.onclick = function() {
     var path = window.location.pathname;
     var page = path.split("/").pop();
     
-    document.getElementById("frame").src = `${1 + Number(page.charAt(0))}.html`;
+    document.getElementById("frame").src = `/nesting/nested/${1 + Number(page.charAt(0))}.html`;
 }
