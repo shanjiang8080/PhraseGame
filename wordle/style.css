@@ -35,3 +35,8 @@ p {
 #secret {
     font-size: 1em;
 }
+
+#wordle {
+    position: fixed;
+    top: 4em;
+}
