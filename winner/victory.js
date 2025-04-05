@@ -57,7 +57,7 @@ const text = "CONGRATULATIONS!";
 const letterWidth = 35; // Width of each letter block
 const letterHeight = 55; // Height of each letter block
 const startX = window.innerWidth / 2 - (text.length * letterWidth) / 2; // Center alignment
-const startY = 100; // Start position (drop from top)
+const startY = 200; // Start position (drop from top)
 
 // Create letter bodies and add to the world
 const letterBodies = text.split('').map((char, index) => {
@@ -76,7 +76,7 @@ const letterBodies = text.split('').map((char, index) => {
     return letter;
 });
 
-let pyramid = Matter.Composites.pyramid(200, sh-600, 10, 20, 5, 5, function(x,y){
+let pyramid = Matter.Composites.pyramid(200, sh / 2 + 100, 10, 20, 5, 5, function(x,y){
     return Matter.Bodies.rectangle(x,y,50,50, {
         friction: 0.3,
         restitution: 0.2,
@@ -86,17 +86,24 @@ let pyramid = Matter.Composites.pyramid(200, sh-600, 10, 20, 5, 5, function(x,y)
 
 var group = Body.nextGroup(true);
 
-var bridge = Composites.stack(160, 290, 15, 1, 0, 0, function(x, y) {
-    return Bodies.rectangle(x - 20, y, 53, 20, { 
+var startex = window.innerWidth/2 - 180;
+var endex = window.innerWidth/2 + 180;
+var bridge = Composites.stack(startex, 290, 15, 1, 0, 0, function(x, y) {
+    return Bodies.rectangle(x - 20, y, 45, 20, { 
         collisionFilter: { group: group },
         chamfer: 1,
         density: 0.005,
         frictionAir: 0.05,
         render: {
-            fillStyle: '#f5d266'
+            fillStyle: '#0fa6e9'
         }
     });
 });
+
+const mid = bridge.bodies[Math.floor(bridge.bodies.length / 2)]
+
+const medal = Bodies.circle(mid.position.x, mid.position.y + 70, 50);
+
 
 Composites.chain(bridge, 0.3, 0, -0.3, 0, { 
     stiffness: 0.99,
@@ -107,19 +114,73 @@ Composites.chain(bridge, 0.3, 0, -0.3, 0, {
 });
 
 var bridgeCA = Constraint.create({
-    pointA: { x: 140, y: 300 },
+    pointA: { x: startex - 20, y: 300 },
     bodyB: bridge.bodies[0],
     pointB: { x: -25, y: 0},
     length: 2,
     stiffness: 0.9
 });
 var bridgeCB = Constraint.create({
-    pointA: { x: 660, y: 300 }, 
+    pointA: { x: endex + 20, y: 300 }, 
     bodyB: bridge.bodies[bridge.bodies.length - 1], 
     pointB: { x: 25, y: 0 },
     length: 2,
     stiffness: 0.9
 })
+var medalAttach = Constraint.create({
+    bodyA: mid,
+    bodyB: medal,
+    pointA: { x: 0, y: 0},
+    pointB: { x: 0, y: 0},
+    stiffness: 0.9,
+});
+
+// make five boxes with the icons
+const l1 = Bodies.rectangle(Math.random() * (sw - 64), Math.random() * (64), 64, 64, {
+    render: {
+        sprite: {
+            texture: '/images/icons/wordle.png',
+            xScale: 0.5,
+            yScale: 0.5,
+        }
+    }
+});
+const l2 = Bodies.rectangle(Math.random() * (sw - 64), Math.random() * (64), 64, 64, {
+    render: {
+        sprite: {
+            texture: '/images/icons/countdown.png',
+            xScale: 0.5,
+            yScale: 0.5,
+        }
+    }
+});
+const l3 = Bodies.rectangle(Math.random() * (sw - 64), Math.random() * (64), 64, 64, {
+    render: {
+        sprite: {
+            texture: '/images/icons/stretch.png',
+            xScale: 0.5,
+            yScale: 0.5,
+        }
+    }
+});
+const l4 = Bodies.rectangle(Math.random() * (sw - 64), Math.random() * (64), 64, 64, {
+    render: {
+        sprite: {
+            texture: '/images/icons/scrolling_size.png',
+            xScale: 0.5,
+            yScale: 0.5,
+        }
+    }
+});
+const l5 = Bodies.rectangle(Math.random() * (sw - 64), Math.random() * (64), 64, 64, {
+    render: {
+        sprite: {
+            texture: '/images/icons/nesting_size.png',
+            xScale: 0.5,
+            yScale: 0.5,
+        }
+    }
+});
 
 
 var ground = Bodies.rectangle(sw/2, sh+50, sw + 100, 100, { isStatic: true });
@@ -128,7 +189,7 @@ var wallA = Bodies.rectangle(-50, 0, 100, sh*2, { isStatic: true });
 var wallB = Bodies.rectangle(sw+50, 0, 100, sh*2, { isStatic: true });
 
 
-World.add(world,[ground, mouseConstraint, ceiling, wallA, wallB, pyramid, bridge, bridgeCA, bridgeCB]);
+World.add(world,[ground, mouseConstraint, ceiling, wallA, wallB, medalAttach, pyramid, bridge, bridgeCA, bridgeCB, medal, l1, l2, l3, l4, l5]);
 
 Engine.run(engine);
 Render.run(render);
@@ -136,6 +197,13 @@ Render.run(render);
 // Custom rendering for text
 Events.on(render, 'afterRender', () => {
     const ctx = render.context;
+
+    // also draw a emoji for the medal
+    ctx.save();
+    ctx.translate(medal.position.x, medal.position.y);
+    ctx.font = "150px Arial";
+    ctx.fillText("🥇", -100, 35);
+    ctx.restore();
 
     letterBodies.forEach((body) => {
         const { x, y } = body.position; // Get the position of the rectangle
