@@ -3,6 +3,6 @@ This is a game I made as part of a school project. The game starts you off at a 
 Each site has a hint system, with two hints and a solution given to players who can't quite figure it out.
 
 
----
-#Process
+
+## Process
 I made this game in about two weeks, using mostly vanilla HTML/CSS/JS. The site is hosted as a static site on Vercel, with an API proxy to make the Wordle site work. For the victory screen, I used Matter.js to create a small physics sandbox.
