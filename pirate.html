@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You should not see this</title>
+</head>
+<link rel="stylesheet" href="https://www.oldgames.sk/codewheel/css/style-actual.css">
+<body>
+    <div id="disc_container">
+        <div id="disc_container_inside" class="relative" style="width:960px;height:960px;">
+            <div id="disc0" class="turnable"> <img src="https://www.oldgames.sk/images/codewheel/monkey-island-1/dialapirate-w1.png"
+                    width="960" height="960"></div>
+            <div id="disc1" class="turnable" style="transform: rotate(0deg);"> <img
+                    src="https://www.oldgames.sk/images/codewheel/monkey-island-1/dialapirate-w2.png" width="960" height="960"></div>
+        </div>
+    </div>
+</body>
+<script>
+    var down_pos = undefined;
+    var clicked_disc = 0;
+    var saved_angles = [0, 0, 0];
+    var current_angles = [0, 0, 0];
+    var wheelSizes = [340];
+    var wheelPieces = 15; // default = 40;
+    var discs = document.querySelectorAll('.turnable');
+    var disc_container = document.getElementById('disc_container');
+    var disc_container_inside = document.getElementById('disc_container_inside');
+    var snap_width = 0.5 * 2 * Math.PI / 360;
+    var sector_width = (360/wheelPieces) * 2 * Math.PI / 360;
+    var buttons_layer = document.querySelector('.buttons-layer');
+    var buttons_layer_help = document.getElementById('helpLayerButtons');
+    var button_left = document.getElementById('btnWL');
+    var button_right = document.getElementById('btnWR');
+    var buttonLayer;
+    var layers = [
+    { id: 0, name: "Bottom Wheel", src: "/images/codewheel/monkey-island-1/dialapirate-w1.png", width: "960", height: "960", interactive: "y" }, 
+            { id: 1, name: "Front Wheel", src: "/images/codewheel/monkey-island-1/dialapirate-w2.png", width: "960", height: "960", interactive: "y" }, 
+            ];
+</script>
+<script src="pirate.js"></script>
+
+</html>
